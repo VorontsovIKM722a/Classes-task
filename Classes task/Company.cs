@@ -21,12 +21,28 @@ namespace Задача_на_класи
         }
         public void Actualinfo(int num_wor)
         {
-            int k; k = number_of_workers - num_wor;
+            int h = 0;
+            Console.WriteLine("Does information need a refresh?" + "\n" + "type 1 to yes");
+            h = Convert.ToInt32(Console.ReadLine());
 
-            if (k == 0) Console.WriteLine($"the number has not changed"); if (k < 0) { Console.WriteLine($"the number of workers increased by {Math.Abs(k)}"); }
-            if (k > 0) { Console.WriteLine($"the number of workers decreased by {Math.Abs(k)}"); }
-            Console.WriteLine($"Number of workers {num_wor}\n");
-            number_of_workers = num_wor;
+            if (h == 1)
+            {
+                Console.WriteLine("Input actual name of company" + "\n");
+                this.name = Console.ReadLine();
+                Console.WriteLine("Input actual location of company" + "\n");
+                this.country = Console.ReadLine();
+                Console.WriteLine("Input actual CEO of company" + "\n");
+                this.CEO = Console.ReadLine();
+                Console.WriteLine("How many people curently work?");//ввід актуальної кількості працівників компанії
+                num_wor = Convert.ToInt32(Console.ReadLine());
+                int k; k = number_of_workers - num_wor;
+                
+
+                if (k == 0) Console.WriteLine($"the number has not changed"); if (k < 0) { Console.WriteLine($"the number of workers increased by {Math.Abs(k)}"); }
+                if (k > 0) { Console.WriteLine($"the number of workers decreased by {Math.Abs(k)}"); }
+                Console.WriteLine($"Number of workers {num_wor}\n");
+                number_of_workers = num_wor;
+            }
         }
     }
 }
